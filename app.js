@@ -1,51 +1,51 @@
 function countdown(endDate) {
-    let days, hours, minutes, seconds;
+	let days, hours, minutes, seconds;
 
-    console.log(endDate);
+	console.log(endDate);
 
-    endDate = new Date(endDate).getTime();
-    console.log(endDate);
+	endDate = new Date(endDate).getTime();
+	console.log(endDate.toString());
 
-    if (isNaN(endDate)) {
-        return;
-    }
+	if (isNaN(endDate)) {
+		return;
+	}
 
-    setInterval(calculate, 1000);
+	setInterval(calculate, 1000);
 
-    function calculate() {
-        let startDate = new Date();
-        startDate = startDate.getTime();
+	function calculate() {
+		let startDate = new Date();
+		startDate = startDate.getTime();
 
-        let timeRemaining = parseInt((endDate - startDate) / 1000);
+		let timeRemaining = parseInt((endDate - startDate) / 1000);
 
-        if (timeRemaining >= 0) {
-            days = parseInt(timeRemaining / 86400);
-            timeRemaining = timeRemaining % 86400;
+		if (timeRemaining >= 0) {
+			days = parseInt(timeRemaining / 86400);
+			timeRemaining = timeRemaining % 86400;
 
-            hours = parseInt(timeRemaining / 3600);
-            timeRemaining = timeRemaining % 3600;
+			hours = parseInt(timeRemaining / 3600);
+			timeRemaining = timeRemaining % 3600;
 
-            minutes = parseInt(timeRemaining / 60);
-            timeRemaining = timeRemaining % 60;
+			minutes = parseInt(timeRemaining / 60);
+			timeRemaining = timeRemaining % 60;
 
-            seconds = parseInt(timeRemaining);
+			seconds = parseInt(timeRemaining);
 
-            document.getElementById('days').innerHTML = parseInt(days, 10);
-            document.getElementById('hours').innerHTML = ('0' + hours).slice(
-                -2
-            );
-            document.getElementById('minutes').innerHTML = (
-                '0' + minutes
-            ).slice(-2);
-            document.getElementById('seconds').innerHTML = (
-                '0' + seconds
-            ).slice(-2);
-        } else {
-            return;
-        }
-    }
+			document.getElementById('days').innerHTML = parseInt(days, 10);
+			document.getElementById('hours').innerHTML = ('0' + hours).slice(
+				-2
+			);
+			document.getElementById('minutes').innerHTML = (
+				'0' + minutes
+			).slice(-2);
+			document.getElementById('seconds').innerHTML = (
+				'0' + seconds
+			).slice(-2);
+		} else {
+			return;
+		}
+	}
 }
 
 (function() {
-    countdown('09/24/2019 09:00:00 PM');
+	countdown('09/23/2019 07:00:00 PM');
 })();
