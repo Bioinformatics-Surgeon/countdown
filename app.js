@@ -1,8 +1,8 @@
 function countdown(endDate) {
 	let days, hours, minutes, seconds;
-
+	console.log(endDate);
 	endDate = new Date(endDate).getTime();
-
+	console.log(endDate);
 	if (isNaN(endDate)) {
 		return;
 	}
