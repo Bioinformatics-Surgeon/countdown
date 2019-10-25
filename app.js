@@ -1,10 +1,7 @@
 function countdown(endDate) {
 	let days, hours, minutes, seconds;
 
-	console.log(endDate);
-
 	endDate = new Date(endDate).getTime();
-	console.log(endDate.toString());
 
 	if (isNaN(endDate)) {
 		return;
@@ -47,5 +44,5 @@ function countdown(endDate) {
 }
 
 (function() {
-	countdown('09/23/2019 07:00:00 PM');
+	countdown('01/11/2020 05:00:00 AM');
 })();
